@@ -1,21 +1,5 @@
 console.log("SUMULADOR DE PRESTAMOS");
 
-function validadorCapital(capital) {
-
-  if (isNaN(capital)) {
-    console.warn("Solo se permiten numeros");
-    return false;
-  } else if (capital < 0) {
-    console.warn("El numero no puede ser negativo");
-    return false;
-  } else if (capital == 0) {
-    console.warn("El numero no puede ser 0");
-    return false;
-  }else{
-    return true;
-  }
-}
-
 function simuladorPrestamos(capital, cuotas, interes) {
 
   console.log("CAPITAL -> $" + capital);
@@ -59,13 +43,28 @@ function simuladorPrestamos(capital, cuotas, interes) {
   );
 }
 
+function validadorCapital(capital) { //Regla: true --> todo bien  // false --> todo mal
+
+  if (isNaN(capital)) {
+    console.warn("Solo se permiten numeros");
+    return false;  // Retorna false --> todo mal
+  } else if (capital < 0) {
+    console.warn("El numero no puede ser negativo");
+    return false;  // Retorna false --> todo mal
+  } else if (capital == 0) {
+    console.warn("El numero no puede ser 0");
+    return false;  // Retorna false --> todo mal
+  }else{
+    return true; // Como las condiciones anteriores no se cumplen, retornamos true --> todo bien
+  }
+}
 
 
-let capital = Number(prompt("Ingrese el capital"));
+let capital = Number(prompt("Ingrese el capital")); // Ingresamos el capital
 
-while(validadorCapital(capital) !== true){
-  capital = Number(prompt("Ingrese el capital"));
-} 
+while(validadorCapital(capital) !== true){ // Llamamos a la funcion validadorCapital(capital), nos devuelve false o true y comparamos
+  capital = Number(prompt("Ingrese el capital"));// Si ingresamos aca, es porque la funcion devolvio false, hay algo mal. Pedimos el capital otra vez
+} // Esto es un bucle, pide capital, compara... Y asi hasta que todo este bien y salgamos del bucle.
 
 let cuotas = Number(prompt("Ingrese las cuotas"));
 let interes = Number(prompt("Ingrese el interes"));
