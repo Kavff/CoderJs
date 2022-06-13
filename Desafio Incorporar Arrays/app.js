@@ -15,10 +15,10 @@ class Usuario {
 
 const usuario1 = new Usuario(1, "Susana", "Oria");
 const usuario2 = new Usuario(2, "Estaban", "Quito");
-const usuario3 = new Usuario(3, "Emmanuel", "Cola");
-const usuario4 = new Usuario(4, "Juelieta", "Diaz");
-const usuario5 = new Usuario(5, "Cristian", "Veliz");
-const usuario6 = new Usuario(6, "Andrea", "Frigueiro");
+const usuario3 = new Usuario(3, "Benito", "Camela");
+const usuario4 = new Usuario(4, "Rosa ", "Mesta");
+const usuario5 = new Usuario(5, "Rosa  ", "Melcacho");
+const usuario6 = new Usuario(6, "Elsa ", "Pito");
 
 const usuarios = [usuario1, usuario2, usuario3, usuario4, usuario5, usuario6];
 
