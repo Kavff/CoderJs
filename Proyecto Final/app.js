@@ -56,34 +56,51 @@ class Juego {
 const tipos = [espada, basto, oro, copa];
 const mazo = [];
 
+let indice =0;
+
 for (let i = 0; i < tipos.length; i++) {
-    const carta = new Carta(i, 1, tipos[i]);
-    const carta2 = new Carta(i, 2, tipos[i]);
-    const carta3 = new Carta(i, 3, tipos[i]);
-    const carta4 = new Carta(i, 4, tipos[i]);
-    const carta5 = new Carta(i, 5, tipos[i]);
-    const carta6 = new Carta(i, 6, tipos[i]);
-    const carta7 = new Carta(i, 7, tipos[i]);
-    const carta10 = new Carta(i, 10, tipos[i]);
-    const carta11 = new Carta(i, 11, tipos[i]);
-    const carta12 = new Carta(i, 12, tipos[i]);
-    mazo.push(carta);
-    mazo.push(carta2);
-    mazo.push(carta3);
-    mazo.push(carta4);
-    mazo.push(carta5);
-    mazo.push(carta6);
-    mazo.push(carta7);
-    mazo.push(carta10);
-    mazo.push(carta11);
-    mazo.push(carta12);
+
+    crearCarta(indice,1,tipos[i]);
+    indice++;
+    crearCarta(indice,2,tipos[i]);
+    indice++;
+    crearCarta(indice,3,tipos[i]);
+    indice++;
+    crearCarta(indice,4,tipos[i]);
+    indice++;
+    crearCarta(indice,5,tipos[i]);
+    indice++;
+    crearCarta(indice,6,tipos[i]);
+    indice++;
+    crearCarta(indice,7,tipos[i]);
+    indice++;
+    crearCarta(indice,10,tipos[i]);
+    indice++;
+    crearCarta(indice,11,tipos[i]);
+    indice++;
+    crearCarta(indice,12,tipos[i]);
+    indice++;
 }
+
+
 
 /* -----------------FUNCIONES------------------- */
 
 window.onload = function(){
+    crearCarta();
     barajarMazo();
+/*     recorrerMazo();
+ */
+} 
+
+
+function crearCarta(indice,valor,tipo)
+{
+    const carta = new Carta(indice, valor, tipo);
+    mazo.push(carta);
 }
+
+
 function barajarMazo(){
     for (let i = 0;i < mazo.length;i++){
         let j = Math.floor(Math.random() * mazo.length);
@@ -95,5 +112,15 @@ function barajarMazo(){
 }
 
 
+function recorrerMazo(){
+
+    for(let cartas of mazo)
+    {
+        console.log(cartas);
+    }
+}
 
 
+
+/* console.log(mazo);
+ */
